@@ -1,0 +1,5 @@
+book_pages=int(input())
+pages_ph=int(input())
+reading_days=int(input())
+book_reading_time=((book_pages/pages_ph)/reading_days)
+print(f'{book_reading_time:.0f}')

@@ -1,18 +1,26 @@
-jury = int(input())
-
-overall_mark = 0
-count_marks = 0
+sum_prime = 0
+sum_non_prime = 0
 
 while True:
-    presentation = input()
-    if presentation == "Finish":
+    number = input()
+    if number == "stop":
         break
-    presentation_avg = 0
-    for i in range(1, jury + 1):
-        mark = float(input())
-        presentation_avg += mark
-        overall_mark += mark
-        count_marks += 1
-    print(f"{presentation} - {presentation_avg/jury:.2f}.")
+    number = int(number)
+    if number < 0:
+        print("Number is negative.")
+        continue
+    while True:
+        if number == 0 or number == 1:
+            break
+        elif number % 2 == 0 or number % 3 == 0 or number % 5 == 0 or number % 7 == 0:
+            if number == 2 or number == 3 or number == 5 or number == 7:
+                sum_prime += number
+            else:
+                sum_non_prime += number
+        else:
+            sum_prime += number
+        break
 
-print(f"Student's final assessment is {overall_mark/count_marks:.2f}.")
+
+print(f"Sum of all prime numbers is: {sum_prime}")
+print(f"Sum of all non prime numbers is: {sum_non_prime}")
